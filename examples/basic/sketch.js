@@ -41,6 +41,14 @@ function setup() {
     microBit.writeMatrixText("CIAO!");
   });
 
+  microBit.onConnect(function(){
+    console.log("connected");
+  });
+
+  microBit.onDisconnect(function(){
+    console.log("disconnected");
+  });
+
 }
 
 function draw() {

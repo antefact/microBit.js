@@ -47,6 +47,9 @@ class uBit {
 
     this.connected = false;
 
+    this.onConnectCallback=function(){};
+    this.onDisconnectCallback=function(){};
+
     this.characteristic = {
       IO_PIN_DATA: {},
       IO_AD_CONFIG: {},
@@ -84,6 +87,14 @@ class uBit {
 
   setButtonBCallback(callbackFunction){
     this.buttonBCallBack=callbackFunction;
+  }
+
+  onConnect(callbackFunction){
+    this.onConnectCallback=callbackFunction;
+  }
+
+  onDisconnect(callbackFunction){
+    this.onDisconnectCallback=callbackFunction;
   }
 
   writePin(pin) {
@@ -223,7 +234,8 @@ class uBit {
 
       console.log('> Name:             ' + device.name);
       console.log('> Id:               ' + device.id);
-      console.log('> Connected:        ' + device.gatt.connected);
+
+      device.addEventListener('gattserverdisconnected', this.onDisconnectCallback);
 
       // Attempts to connect to remote GATT Server.
       return device.gatt.connect();
@@ -233,6 +245,7 @@ class uBit {
       // Note that we could also get all services that match a specific UUID by
       // passing it to getPrimaryServices().
       this.connected = true;
+      this.onConnectCallback();
       console.log('Getting Services...');
       return server.getPrimaryServices();
     })

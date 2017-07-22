@@ -32,6 +32,10 @@ The example folder provided contains several examples for interacting with the d
 
 - `microBit.setButtonBCallback(callbackFunction)`
 
+- `microBit.onConnect(callbackFunction)`
+
+- `microBit.onDisconnect(callbackFunction)`
+
 - `microBit.writeMatrixIcon(icon)`
 
 - `microBit.writeMatrixText(text)`
