@@ -251,7 +251,6 @@ class uBit {
     .then(server => {
       // Note that we could also get all services that match a specific UUID by
       // passing it to getPrimaryServices().
-      this.connected = true;
       this.onConnectCallback();
       console.log('Getting Services...');
       return server.getPrimaryServices();
@@ -286,6 +285,8 @@ class uBit {
 
               case LED_STATE:
                 this.characteristic.LED_STATE = characteristic;
+                this.connected = true;
+
                 break;
 
               case LED_TEXT:
@@ -310,7 +311,8 @@ class uBit {
         }));
       });
       return queue;
-    })
+    }
+  )
     .catch(error => {
       console.log('Argh! ' + error);
     });

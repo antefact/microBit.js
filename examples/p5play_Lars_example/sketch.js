@@ -106,14 +106,14 @@ function draw() {
       meltingTitle();
       console.log("it's " + larsTemp+ " i'm melting !!")
       showSweat();
-      //microBit.writeMatrixIcon(hot);
+      microBit.writeMatrixIcon(hot);
       waterLevel=waterLevel+0.00001
       parsed= parseFloat(Math.round(waterLevel * 100) / 100).toFixed(2);
 
     } else{
       boatsTitle();
       showLars();
-      //microBit.writeMatrixIcon(ok);
+      microBit.writeMatrixIcon(ok);
     }
   } else {
     connectTitle()
