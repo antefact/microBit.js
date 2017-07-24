@@ -167,6 +167,9 @@ Connect your microbit to a webpage, visualize the data and change the animations
 
 [Try it here](https://antefact.github.io/microBit.js/examples/basic/)
 
+![web ble demo](assets/html.gif)
+
+
 ### basic p5.js example
 Learn how to interact with the microbit from a p5.js sketch, rotate a cube on the canva reading the accelerometer.
 
