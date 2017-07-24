@@ -23,7 +23,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(600, 400);
+  canvas = createCanvas(710, 400, WEBGL);
 
   microBit=new uBit();
 
@@ -54,10 +54,16 @@ function setup() {
 function draw() {
   background(23);
   if (microBit.connected){
-    // console.log ("acceleration",microBit.getAccelerometer());
-    // console.log ("temperature",microBit.getTemperature());
-    // console.log ("bearing",microBit.getBearing());
+
+    noStroke();
+    push();
+    rotateX(microBit.getAccelerometer().x/10);
+    rotateY(microBit.getAccelerometer().y/10);
+    box(150);
+    pop();
+
   }
+
 
 }
 

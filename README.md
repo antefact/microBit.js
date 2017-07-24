@@ -167,7 +167,12 @@ Connect your microbit to a webpage, visualize the data and change the animations
 
 [Try it here](https://antefact.github.io/microBit.js/examples/basic/)
 
-### p5.js example
-Learn how to interact with the microbit from a p5.js sketch and control your character on the screen.
+### basic p5.js example
+Learn how to interact with the microbit from a p5.js sketch, rotate a cube on the canva reading the accelerometer.
 
-[Try it here](https://antefact.github.io/microBit.js/examples/basic/)
+[Try it here](https://antefact.github.io/microBit.js/examples/p5js_example/)
+
+### Lars the iceberg
+Use the microBit to control Lars the iceberg. Don't let it melt!
+
+[Try it here](https://antefact.github.io/microBit.js/examples/p5js_Lars_example/)
