@@ -175,4 +175,4 @@ Learn how to interact with the microbit from a p5.js sketch, rotate a cube on th
 ### Lars the iceberg
 Use the microBit to control Lars the iceberg. Don't let it melt!
 
-[Try it here](https://antefact.github.io/microBit.js/examples/p5js_Lars_example/)
+[Try it here](https://antefact.github.io/microBit.js/examples/p5play_Lars_example/)
