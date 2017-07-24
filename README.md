@@ -1,5 +1,6 @@
 # microBit.js
 A javascript library to interact with [BBC micro:bit](http://microbit.org/) using web bluetooth API.
+![lars the iceberg](assets/lars.gif)
 
 ## Usage
 
