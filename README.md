@@ -162,10 +162,12 @@ The example folder provided contains several examples for interacting with the d
 ## Examples
 Check the examples folder for working examples.
 
-### basic example
-Connect your microbit to a webpage, visualize the data and change the animations on the led matrix
-[try it here](https://antefact.github.io/microBit.js/examples/basic/)
+### Basic example
+Connect your microbit to a webpage, visualize the data and change the animations on the led matrix.
+
+[Try it here](https://antefact.github.io/microBit.js/examples/basic/)
 
 ### p5.js example
-Learn how to interact with the microbit from a p5.js sketch and control your character on the screen
-try it here
+Learn how to interact with the microbit from a p5.js sketch and control your character on the screen.
+
+[Try it here](https://antefact.github.io/microBit.js/examples/basic/)
