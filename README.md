@@ -28,24 +28,141 @@ The example folder provided contains several examples for interacting with the d
 
 - `microBit.searchDevice()`
 
+  Search for ble devices in range.
+
+
 - `microBit.setButtonACallback(callbackFunction)`
+
+  Register a callback function to be invoked when Button A is pressed.
+
+  example:
+  ```
+  microBit.setButtonACallback(function(){
+    console.log("buttonA pressed");
+  });
+```
 
 - `microBit.setButtonBCallback(callbackFunction)`
 
+  Register a callback function to be invoked when Button B is pressed.
+
+  example:
+  ```
+  microBit.setButtonBCallback(function(){
+    console.log("buttonB pressed");
+  });
+  ```
+
 - `microBit.onConnect(callbackFunction)`
+
+  Register a callback function invoked when the microBit connects
+
+  example:
+  ```
+  microBit.onConnect(function(){
+    console.log("connected");
+  });
+  ```
 
 - `microBit.onDisconnect(callbackFunction)`
 
+  Register a callback function invoked when the microBit disconnects
+
+  example:
+  ```
+  microBit.onDisconnect(function(){
+    console.log("disconnected");
+  });
+  ```
+
 - `microBit.onBleNotify(callbackFunction)`
+
+  Register a callback function invoked every time the value of characteristic changes and it is notified by the device.
+
+  example:
+  ```
+  microBit.onBleNotify(function(){
+    document.getElementById("buttonA").innerHTML=microBit.getButtonA();
+  }
+  ```
 
 - `microBit.writeMatrixIcon(icon)`
 
+  Updates the led matrix on the microbit.
+  The `icon` passed to the function must be 5x5 matrix.
+  0=led off;
+  1=led on;
+
+  example:
+  ```
+  var ledMatrix = [
+    ['0', '0', '0', '0', '0'],
+    ['0', '1', '0', '1', '0'],
+    ['0', '0', '0', '0', '0'],
+    ['1', '0', '0', '0', '1'],
+    ['0', '1', '1', '1', '0']
+  ]
+
+  microBit.writeMatrixIcon(ledMatrix);
+
+  ```
+
 - `microBit.writeMatrixText(text)`
+
+  Updates the led matrix of the microbit with a scrolling text.
+
+  example:
+  ```
+  microBit.writeMatrixText("ciao microBit")
+  ```
+
+- `writeMatrixTextSpeed(speed)`
+
+  set the speed of the scrolling text on the matrix
+
 
 - `microBit.getAccelerometer()`
 
+  Returns the value of the accelerometer as a object.
+
+  example:
+  ```
+  acceleration=microBit.getAccelerometer();
+  acc_x=acceleration.x;
+  acc_y=acceleration.y;
+  acc_z=acceleration.z;
+
+  ```
+
 - `microBit.getTemperature()`
+
+  Returns the value of the temperature measured on the processor in celsius.
+
+  example:
+  ```
+  temperature=microBit.getTemperature();
+
+  ```
+
 
 - `microBit.getBearing()`
 
-- `writeMatrixTextSpeed(speed)`
+  Returns the value of magnetometer bearing from 0 to 360.
+  0= pointing nord
+
+  example:
+  ```
+  bearing=microBit.getBearing();
+
+  ```
+
+## Examples
+Check the examples folder for working examples.
+
+### basic example
+Connect your microbit to a webpage, visualize the data and change the animations on the led matrix
+[try it here](https://antefact.github.io/microBit.js/examples/basic/)
+
+### p5.js example
+Learn how to interact with the microbit from a p5.js sketch and control your character on the screen
+try it here
