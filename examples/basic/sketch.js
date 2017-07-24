@@ -22,6 +22,9 @@ microBit.onConnect(function(){
   console.log("connected");
 
   document.getElementById("connected").innerHTML="true";
+  document.getElementById("properties").menu.classList.toggle('inactive');
+
+
 
   microBit.setButtonACallback(function(){
     console.log("buttonA pressed");
