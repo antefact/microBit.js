@@ -1,6 +1,4 @@
 var microBit;
-var canvas;
-var button;
 
 var iconLeft = [
   ['0', '0', '0', '0', '0'],
@@ -18,49 +16,63 @@ var iconRight = [
   ['1', '0', '0', '0', '1']
 ]
 
-function preload() {
+microBit=new uBit();
 
-}
+microBit.onConnect(function(){
+  console.log("connected");
 
-function setup() {
-  canvas = createCanvas(600, 400);
-
-  microBit=new uBit();
-
-  button = createButton('connect microBit');
-  button.mousePressed(searchDevice); // attach button listener
+  document.getElementById("connected").innerHTML="true";
 
   microBit.setButtonACallback(function(){
     console.log("buttonA pressed");
-    microBit.writeMatrixIcon(iconLeft);
-
   });
 
   microBit.setButtonBCallback(function(){
     console.log("buttonB pressed");
-    microBit.writeMatrixText("CIAO!");
   });
+});
 
-  microBit.onConnect(function(){
-    console.log("connected");
-  });
-
-  microBit.onDisconnect(function(){
-    console.log("disconnected");
-  });
-
-}
-
-function draw() {
-  background(23);
-  if (microBit.connected){
-    // console.log ("acceleration",microBit.getAccelerometer());
-    // console.log ("temperature",microBit.getTemperature());
-    // console.log ("bearing",microBit.getBearing());
-  }
-
-}
+microBit.onDisconnect(function(){
+  console.log("disconnected");
+  document.getElementById("connected").innerHTML="false";
+});
 
 function searchDevice(){
   microBit.searchDevice();
+}
+
+microBit.onBleNotify(function(){
+  document.getElementById("buttonA").innerHTML=microBit.getButtonA();
+  document.getElementById("buttonB").innerHTML=microBit.getButtonB();
+
+  document.getElementById("acc_X").innerHTML=microBit.getAccelerometer().x;
+  document.getElementById("acc_Y").innerHTML=microBit.getAccelerometer().y;
+  document.getElementById("acc_Z").innerHTML=microBit.getAccelerometer().z;
+
+  document.getElementById("temp").innerHTML=microBit.getTemperature();
+  document.getElementById("bearing").innerHTML=microBit.getBearing();
+})
+
+
+var ledMatrix = [
+  ['0', '0', '0', '0', '0'],
+  ['0', '0', '0', '0', '0'],
+  ['0', '0', '0', '0', '0'],
+  ['0', '0', '0', '0', '0'],
+  ['0', '0', '0', '0', '0']
+]
+
+function updatePixel(x,y,value){
+  if (value){
+    ledMatrix[x][y]=1;
+  }else{
+    ledMatrix[x][y]=0;
+  }
+  microBit.writeMatrixIcon(ledMatrix);
+}
+
+function updateText(){
+  text=document.getElementById("newText").value;
+  console.log(text);
+  microBit.writeMatrixText(text);
 }

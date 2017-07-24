@@ -36,6 +36,8 @@ The example folder provided contains several examples for interacting with the d
 
 - `microBit.onDisconnect(callbackFunction)`
 
+- `microBit.onBleNotify(callbackFunction)`
+
 - `microBit.writeMatrixIcon(icon)`
 
 - `microBit.writeMatrixText(text)`

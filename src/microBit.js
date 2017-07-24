@@ -50,6 +50,8 @@ class uBit {
     this.onConnectCallback=function(){};
     this.onDisconnectCallback=function(){};
 
+    this.onBLENotifyCallback=function(){};
+
     this.characteristic = {
       IO_PIN_DATA: {},
       IO_AD_CONFIG: {},
@@ -95,6 +97,10 @@ class uBit {
 
   onDisconnect(callbackFunction){
     this.onDisconnectCallback=callbackFunction;
+  }
+
+  onBleNotify(callbackFunction){
+    this.onBLENotifyCallback=callbackFunction;
   }
 
   writePin(pin) {
@@ -168,6 +174,7 @@ class uBit {
 
   characteristic_updated(event) {
 
+    this.onBLENotifyCallback();
     //BUTTON CHARACTERISTIC
     if (event.target.uuid == BTN_A_STATE) {
       //console.log("BTN_A_STATE", event.target.value.getInt8());

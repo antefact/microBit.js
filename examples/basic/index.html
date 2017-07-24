@@ -15,21 +15,99 @@
     body {
       padding: 0;
       margin: 0;
+      width: 100%;
     }
 
-    #connector {
-      background-color: black;
-      padding: 4px;
-      color: white;
-      position: fixed;
-      bottom: 0px;
-      width: 100%;
+    .container {
+      margin: auto;
+      width: 960px;
+    }
+
+    h1 {
       text-align: center;
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <h1>
+    micro:bit web ble Demo
+  </h1>
+
+    <button onClick="searchDevice()">search device</button>
+
+    <div class="properties">
+
+      <div class="property">
+        Connected: <span id="connected" class="value"></span>
+      </div>
+
+      <div class="property">
+        Button A: <span id="buttonA" class="value"></span>
+      </div>
+
+      <div class="property">
+        Button B: <span id="buttonB" class="value"></span>
+      </div>
+
+      <div class="property">
+        Accelerometer: X:<span id="acc_X" class="value"></span>, Y:<span id="acc_Y" class="value"></span>, Z:<span id="acc_Z" class="value"></span>
+      </div>
+
+      <div class="property">
+        Temperature: <span id="temp" class="value"></span>
+      </div>
+
+      <div class="property">
+        Magnetometer bearing: <span id="bearing" class="value"></span>
+      </div>
+
+      <div class="property">
+        Led Matrix:
+        <br/>
+        <input type="checkbox" onchange="updatePixel(0,0,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(0,1,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(0,2,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(0,3,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(0,4,this.checked)"/>
+        <br/>
+        <input type="checkbox" onchange="updatePixel(1,0,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(1,1,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(1,2,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(1,3,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(1,4,this.checked)"/>
+        <br/>
+        <input type="checkbox" onchange="updatePixel(2,0,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(2,1,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(2,2,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(2,3,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(2,4,this.checked)"/>
+        <br/>
+        <input type="checkbox" onchange="updatePixel(3,0,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(3,1,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(3,2,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(3,3,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(3,4,this.checked)"/>
+        <br/>
+        <input type="checkbox" onchange="updatePixel(4,0,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(4,1,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(4,2,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(4,3,this.checked)"/>
+        <input type="checkbox" onchange="updatePixel(4,4,this.checked)"/>
+        <br/>
+      </div>
+
+      <div class="property">
+        Scrolling text:
+        <input type="text" id="newText"/>
+        <button onClick="updateText()">update</button>
+      </div>
+
+
+    </div>
+
+  </div>
 
 </body>
 
