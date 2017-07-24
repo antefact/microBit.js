@@ -1,5 +1,5 @@
 # microBit.js
-A javascript library to interact with BBC micro:bit using web bluetooth API.
+A javascript library to interact with [BBC micro:bit](http://microbit.org/) using web bluetooth API.
 
 ## Usage
 
@@ -171,11 +171,12 @@ Connect your microbit to a webpage, visualize the data and change the animations
 
 
 ### basic p5.js example
-Learn how to interact with the microbit from a p5.js sketch, rotate a cube on the canva reading the accelerometer.
+Learn how to interact with the microbit from a [p5.js](https://p5js.org/) sketch, rotate a cube on the canva reading the accelerometer.
 
 [Try it here](https://antefact.github.io/microBit.js/examples/p5js_example/)
 
 ### Lars the iceberg
 Use the microBit to control Lars the iceberg. Don't let it melt!
+Developed using [p5.js](https://p5js.org/) and [p5.play](http://p5play.molleindustria.org/) library.
 
 [Try it here](https://antefact.github.io/microBit.js/examples/p5play_Lars_example/)
